@@ -1,0 +1,19 @@
+{
+    "name": "yarob/laravel-service-generator",
+    "description": "make your service layer classes easily",
+    "authors": [
+        {
+            "name": "Yarob Al Mostafa",
+            "email": "yarob.hm@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Yarob\\LaravelServiceGenerator\\": "src/"
+        }
+    },
+
+    "require": {},
+    "minimum-stability": "dev"
+}
