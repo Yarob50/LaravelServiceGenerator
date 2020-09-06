@@ -1,0 +1,26 @@
+<?php
+
+namespace Yarob\LaravelServiceGenerator\Tests;
+
+use Yarob\LaravelServiceGenerator\LaravelServiceGeneratorServiceProvider;
+
+class TestCase extends \Orchestra\Testbench\TestCase
+{
+  public function setUp(): void
+  {
+    parent::setUp();
+    // additional setup
+  }
+
+  protected function getPackageProviders($app)
+  {
+    return [
+        LaravelServiceGeneratorServiceProvider::class,
+    ];
+  }
+
+  protected function getEnvironmentSetUp($app)
+  {
+    // perform environment setup
+  }
+}
