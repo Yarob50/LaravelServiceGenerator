@@ -1,7 +1,7 @@
 <p align="center">
  <img align="center" src="https://github.com/Yarob50/LaravelServiceGenerator/blob/master/assets/logo.png" />
 </p>
-<h1 align="center"> :star: :trophy: Laravel Service Generator </h1>
+<h1 align="center"> :star: Laravel Service Generator 🚀</h1>
 
  <h3 align="center"> Generate the service layer like you do for models, controllers.. etc 🤩</h3>
 
