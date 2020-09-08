@@ -15,6 +15,14 @@
         }
     },
 
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yarob\\LaravelServiceGenerator\\LaravelServiceGeneratorServiceProvider"
+            ]
+        }
+    },
+
     "require": {},
     "minimum-stability": "dev",
     "require-dev": {
