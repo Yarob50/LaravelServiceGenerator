@@ -5,7 +5,7 @@
 
  <h3 align="center"> Generate the service layer like you do for models, controllers.. etc 🤩</h3>
 
-## Quick Look
+## 👁 Quick Look
 It's common in many Laravel projects to introduce a new layer to the MVC architecture and to the project structure which is primarily used for lifting the heavy business logic of the app making the job of the controller limited on receiving the request and returning the response. One solution for achieving this is using the **Service Layer**. While you have artisan commands for creating migrations, models, controllers.. etc, you don't have one for creating the service classes as it's not part of the original Laravel project structure. Creating a service and making an interface for it (to prevent tight coupling) is a task that you would do again and again in your service-layer-based projects, and thankfully, **Laravel Service Generator** is here to save you some time. 🥳
 **NOTE: I know that it's also common to use the Repository layer instead or even with the Service layer, however, this solution is not supported in this package yet and your contribution is always welcome 😄**
 
