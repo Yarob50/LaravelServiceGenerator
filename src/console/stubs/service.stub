@@ -2,9 +2,9 @@
 
 namespace {{ namespace }};
 
-use {{ class }}ServiceInterface;
+use {{ class }}Interface;
 
-class {{ class }}Service implements {{ class }}ServiceInterface
+class {{ class }} implements {{ class }}Interface
 {
     
 }

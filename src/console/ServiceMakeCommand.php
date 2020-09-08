@@ -94,7 +94,7 @@ class ServiceMakeCommand extends GeneratorCommand
             // and then, if the create interface is enabled, then create the service interface by executing the command of make:service-interface where
             // name will be the same name of the service but with adding Interface word
             $this->call('make:service-interface', [
-                'name' => $this->getNameInput()
+                'name' => $this->getNameInput()."Interface"
             ]);
         }
         

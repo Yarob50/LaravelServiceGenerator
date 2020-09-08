@@ -2,7 +2,7 @@
 
 namespace {{ namespace }};
 
-class {{ class }}Interface
+class {{ class }}
 {
     
 }
