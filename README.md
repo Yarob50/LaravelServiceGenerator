@@ -33,8 +33,11 @@ If you don't want to generate the Interface along with the service and limit the
 php artisan make:service ItemsService --no-interface
 ```
 Or you can make this to be the default behavior of the command by:
-1- publishing the config: `php artisan vendor:publish --provider="Yarob\LaravelServiceGenerator\LaravelServiceGeneratorServiceProvider" --tag=config` file.
-2- changing the value of `create_interface_enabled` to be `false` in the published config file which you can find in: `config/laravelService.php`.
+1- publishing the config: 
+```
+php artisan vendor:publish --provider="Yarob\LaravelServiceGenerator\LaravelServiceGeneratorServiceProvider" --tag=config
+```
+2- changing the value of `create_interface_enabled` to be `false` in the published config file which you can find in: `config/laravelServiceGenerator.php`.
 After making this change, whenever you run `php artisan make:service <ServiceName>`, only the Service class will be generated without the interface.
 
 ## ⚙️ Customization
