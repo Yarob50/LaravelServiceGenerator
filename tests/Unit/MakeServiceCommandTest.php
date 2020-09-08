@@ -44,6 +44,12 @@ class MakeServiceCommandTest extends TestCase
 
         $this->assertTrue(File::exists($this->servicePath));
         $this->assertTrue(File::exists($this->serviceInterfacePath));
+
+        // when the service is created with the interface, the file of the service should contain the word (implements)
+        // which indicates that the service is extending the interface
+        $fileContent = file_get_contents($this->servicePath);
+        $extendsIncluded = str_contains($fileContent, "implements");
+        $this->assertTrue($extendsIncluded);
     }
 
     /** @test */
@@ -67,6 +73,11 @@ class MakeServiceCommandTest extends TestCase
         
         $this->assertTrue(File::exists($this->servicePath));
         $this->assertFalse(File::exists($this->serviceInterfacePath));
+
+        // check the content of the generated service file
+        $fileContent = file_get_contents($this->servicePath);
+        $extendsIncluded = str_contains($fileContent, "implements");
+        $this->assertFalse($extendsIncluded);
     }
 
     /** @test */
@@ -92,5 +103,10 @@ class MakeServiceCommandTest extends TestCase
         
         $this->assertTrue(File::exists($this->servicePath));
         $this->assertFalse(File::exists($this->serviceInterfacePath));
+
+        // check the content of the generated service file
+        $fileContent = file_get_contents($this->servicePath);
+        $extendsIncluded = str_contains($fileContent, "implements");
+        $this->assertFalse($extendsIncluded);
     }
 }
