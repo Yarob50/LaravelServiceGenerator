@@ -36,7 +36,11 @@ class ServiceMakeCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        $stub = '/stubs/service.stub';
+        if ($this->shouldGenerateInterface()){
+            $stub = '/stubs/service.stub';
+        }else {
+            $stub = '/stubs/serviceOnly.stub';
+        }
         return $this->resolveStubPath($stub);
     }
 
@@ -86,12 +90,7 @@ class ServiceMakeCommand extends GeneratorCommand
         // call the parent handle which will be in charge of creating the service class
         parent::handle();
 
-        // to create the interface with the service, two conditions should be met: the first one
-        // is that there the option (--no-interface) is not passed with the command && the second one
-        // is that the value of (create_interface_enabled) is not set to false in the config file
-        $noInterface = $this->option('no-interface');
-        $createInterfaceEnabled = config('laravelServiceGenerator.create_interface_enabled',true);
-        if (!$noInterface && $createInterfaceEnabled) {
+        if ($this->shouldGenerateInterface()) {
             // and then, if the create interface is enabled, then create the service interface by executing the command of make:service-interface where
             // name will be the same name of the service but with adding Interface word
             $this->call('make:service-interface', [
@@ -99,5 +98,18 @@ class ServiceMakeCommand extends GeneratorCommand
             ]);
         }
         
+    }
+
+    /*
+        to check if the interface should be made along with the service or not
+    */
+    private function shouldGenerateInterface() 
+    {
+        // to create the interface with the service, two conditions should be met: the first one
+        // is that there the option (--no-interface) is not passed with the command && the second one
+        // is that the value of (create_interface_enabled) is not set to false in the config file
+        $noInterface = $this->option('no-interface');
+        $createInterfaceEnabled = config('laravelServiceGenerator.create_interface_enabled',true);
+        return !$noInterface && $createInterfaceEnabled;
     }
 }
