@@ -16,7 +16,7 @@ class LaravelServiceGeneratorServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        $this->mergeConfigFrom(__DIR__.'/../config/laravelService.php', 'laravelServiceGenerator');
+        $this->mergeConfigFrom(__DIR__.'/../config/laravelServiceGenerator.php', 'laravelServiceGenerator');
     }
 
     /**
@@ -31,7 +31,7 @@ class LaravelServiceGeneratorServiceProvider extends ServiceProvider
         ], 'stubs');
 
         $this->publishes([
-            __DIR__.'/../config/laravelService.php' => config_path('laravelService.php')
+            __DIR__.'/../config/laravelServiceGenerator.php' => config_path('laravelServiceGenerator.php')
         ], 'config');
         
         $this->commands([
