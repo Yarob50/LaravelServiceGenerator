@@ -31,7 +31,7 @@ class LaravelServiceGeneratorServiceProvider extends ServiceProvider
         ], 'stubs');
 
         $this->publishes([
-            __DIR__.'/../config' => base_path('config')
+            __DIR__.'/../config/laravelService.php' => config_path('laravelService.php')
         ], 'config');
         
         $this->commands([
