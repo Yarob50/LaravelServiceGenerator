@@ -11,7 +11,8 @@
     "autoload": {
         "psr-4": {
             "Yarob\\LaravelServiceGenerator\\": "src/",
-            "Yarob\\LaravelServiceGenerator\\Tests\\": "tests"
+            "Yarob\\LaravelServiceGenerator\\Tests\\": "tests",
+            "Yarob\\LaravelServiceGenerator\\Console\\": "src/console"
         }
     },
 
